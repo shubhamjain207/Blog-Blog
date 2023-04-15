@@ -1,0 +1,64 @@
+body{
+	
+	background-color:green;
+
+}
+
+.navbar{
+	
+	background-color:red;
+}
+
+.nav-list{
+	 display: flex;
+     flex-direction: row;
+      flex-wrap: wrap;
+}
+
+.nav-list-item{
+	margin:10;
+}
+
+.loginBody,.registerBody{
+    height:700px;
+  display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+    background:white;
+
+}
+
+
+
+.container{
+    
+    height:300px;
+    
+    
+    padding: 30px;
+    background-color:white;
+    border:2px solid black;
+}
+
+.loginForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.formFlexItems{
+    margin-bottom: 40px;
+}
+
+.errorPage{
+	
+	color:red;
+	
+}
+
+.blogContainer{
+	
+	color:yellow;
+	
+}
+
