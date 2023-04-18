@@ -11,15 +11,16 @@
 
 <%
 
-String userEmail = (String)session.getAttribute("currentUser");
+String userEmail = (String)session.getAttribute("currentUserEmail");
+String userName = (String) session.getAttribute("currentUserName");
+String userId = (String) session.getAttribute("currentUserId");
+String userEmail1 = (String)session.getAttribute("currentUserEmail");
+String userGender = (String)session.getAttribute("currentUserGender");
+String userRegDate = (String)session.getAttribute("currentUserRegDate");
+String userPhoto =  (String)session.getAttribute("currentUserPhoto");
 
 
-String userId = (String) request.getAttribute("userId");
-String userName = (String)request.getAttribute("userName");
-String userEmail1 = (String)request.getAttribute("userEmail");
-String userGender = (String)request.getAttribute("userGender");
-String userRegDate = (String)request.getAttribute("userRegDate");
-String userPhoto =  (String)request.getAttribute("userPhoto");
+
 
 
 
@@ -39,7 +40,7 @@ String userPhoto =  (String)request.getAttribute("userPhoto");
 
 <div id="profileView" style="display:visible">  
 <img src="pics/<%=userPhoto%>" style="height:100px;width:100px" >
-<h1>User Name: <%=userId %></h1>
+<h1>User Name: <%=userName %></h1>
 <h1>User Email: <%=userEmail %></h1>
 <h1>Gender: <%=userGender %></h1>
 

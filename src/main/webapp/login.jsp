@@ -47,17 +47,16 @@ try {
 		if(set.getString("userEmail").equals(email)){
 		
 			HttpSession httpses = request.getSession();
-			httpses.setAttribute("currentUser", email);
+			httpses.setAttribute("currentUserId", set.getString("userId"));
+			httpses.setAttribute("currentUserEmail", set.getString("userEmail"));
+			httpses.setAttribute("currentUserName", set.getString("userName"));
+			httpses.setAttribute("currentUserGender", set.getString("userGender"));
+			httpses.setAttribute("currentUserPhoto", set.getString("userPhoto"));
+			httpses.setAttribute("currentUserRegDate", set.getString("userRegDate"));
+			
 			
 			RequestDispatcher rd;
-			String userId = String.valueOf(set.getInt("userId"));
-			request.setAttribute("userId",userId);
-			request.setAttribute("userName", set.getString("userName"));
-			request.setAttribute("userEmail", set.getString("userEmail"));
-			request.setAttribute("userGender", set.getString("userGender"));
-			request.setAttribute("userPhoto", set.getString("userPhoto"));
-			request.setAttribute("userRegDate", set.getString("userRegDate"));
-			rd = request.getRequestDispatcher("profile.jsp");
+			rd = request.getRequestDispatcher("Home.jsp");
 			rd.forward(request, response);
 			
 			

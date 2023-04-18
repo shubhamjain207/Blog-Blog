@@ -1,8 +1,23 @@
+.profilePageButton{
+	
+	position:fixed;
+	right:0;
+	top:0;
+	
+	
+}
+
 .blogContainer{
 	border:1px solid black;
+	
 	height:100px;
 	width:200px;
 	padding:10px;
 	margin:10px;
-	
+}
+
+.writeBlog{
+	position:fixed;
+	width:100%;
+	top:0;
 }

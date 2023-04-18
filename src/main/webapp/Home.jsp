@@ -5,15 +5,25 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-<link href="homeStyle.css" rel="stylesheet">
+
+<style>
+     <%@ include file="homeStyle.css"%>
+</style>
+
 </head>
 <body>
 
-
 <%@page import="java.sql.*"%>
 <%@page import="java.util.*"%>
+<%@page import="servlets.BlogPost"%>
+
 
 <%
+
+HttpSession http = request.getSession();
+String userName = (String) http.getAttribute("currentUserName");
+
+ArrayList<BlogPost> list = new ArrayList<>();
 
 try {
 	
@@ -24,51 +34,57 @@ try {
 	Statement pstm =  cn.createStatement();
 	
 	ResultSet set =  pstm.executeQuery(q);
-
 	
 	
-	while(set.next()) {
-
-			
-			
-			
-	%>		
-	
-	<div class="blogContainer">
-
-    <h5><%=set.getString("user_id_blog")%></h5>
-	<%= set.getString("blog_content")%>
-
-</div>
-
 	
 	
-	<%
+	while(set.next()){
+	
+		
+		BlogPost bp = new BlogPost(set.getString("blog_content"),set.getString("user_id_blog"));
+		list.add(bp);
 	}
 	
+	Collections.reverse(list);
+	for(int i = 0 ; i < list.size() ; i++){
+		
+	
+	
+	
+	%>
+String userName	
+	<div class="blogContainer">
+		<h1><%=list.get(i).getBlogContent()%></h3>
+	    <h3><%=list.get(i).getBlogUserEmail()%></h1>
+	</div>
+	
+	
+<% 	
+	
+}	
+
 }catch(Exception e){
 		
-	
-	
 }
-	%>
-	
-	
-		
-	
-		
 
-<form action="Home1" method="post">
+%>
+
+<div class="writeBlog">
+
+<form action="Home1" method="post" >
 
 Write blog : <input type="text" name="blogpost">
 
-
-
-
 <input type="submit" value="Post">
-
-
+</div>
 
 </form>
+
+<div class="profilePageButton">
+	<form action="profile.jsp" method="post">
+	<input type="submit" value="My Profile">
+	</form>
+</div>
+
 </body>
 </html>
