@@ -18,13 +18,14 @@
 <%
 
 
+String email = "";
+email = (String) request.getAttribute("userEmail");
 
-String email = request.getParameter("userEmail");
 
-
-%>
-
-<%
+	
+	
+	
+	
 
 try {
 	
@@ -36,16 +37,13 @@ try {
 	
 	ResultSet set =  pstm.executeQuery(q);
 
-	%>
-	
-	<h1><%=email %></h1>
-	
-	<% 
 	
 	while(set.next()) {
 	
 		if(set.getString("userEmail").equals(email)){
 		
+		
+			
 			HttpSession httpses = request.getSession();
 			httpses.setAttribute("currentUserId", set.getString("userId"));
 			httpses.setAttribute("currentUserEmail", set.getString("userEmail"));
@@ -59,20 +57,18 @@ try {
 			rd = request.getRequestDispatcher("Home.jsp");
 			rd.forward(request, response);
 			
+		
 			
-			
-		
-%>
-		
-		
-		
-<% 		
-
-
 		}
 		
 	}
+		
 }
+
+
+
+
+
 catch(Exception e) {
 	
 	//RequestDispatcher rd;
@@ -80,6 +76,8 @@ catch(Exception e) {
 	//rd.forward(request, response);
 	e.printStackTrace();
 }
+
+
 
 %>
 

@@ -48,7 +48,7 @@ public class Home1 extends HttpServlet {
 			
 
 			HttpSession httpsess = request.getSession();
-			String currentUser =  (String) httpsess.getAttribute("currentUser");
+			String currentUser =  (String) httpsess.getAttribute("currentUserEmail");
 			
 			
 			PreparedStatement pstm = cn.prepareStatement(q);

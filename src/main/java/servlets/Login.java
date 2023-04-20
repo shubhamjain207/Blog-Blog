@@ -40,6 +40,7 @@ public class Login extends HttpServlet {
 		String password = request.getParameter("userPassword");
 		
 		
+		System.out.println(email);
 
 		RequestDispatcher rd;
 		request.setAttribute("userEmail", email);

@@ -60,8 +60,8 @@ String userPhoto =  (String)session.getAttribute("currentUserPhoto");
 
 <div id="editProfileView" style="display:none">
 
-<form action="EditProfile"  method="post" class="loginForm">
-	<input type="text" name="userId" value=<%=userId%>>
+<form action="EditProfile"  method="post" class="loginForm" enctype="multipart/form-data">
+	Profile Picture : <input type="file" class="formFlexItems" name="userPhoto">
     User Name: <input type="text" class="formFlexItems" name="userName">
     Email:<input type="email" class="formFlexItems" name="userEmail">
     Password:<input type="password" class="formFlexItems" name="userPassword">
