@@ -33,8 +33,14 @@ public class Logout extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		
-		HttpSession sess = request.getSession();
-		sess.removeAttribute("currentUser");
+		HttpSession httpses = request.getSession();
+		
+		httpses.removeAttribute("currentUserId");
+		httpses.removeAttribute("currentUserEmail");
+		httpses.removeAttribute("currentUserName");
+		httpses.removeAttribute("currentUserGender");
+		httpses.removeAttribute("currentUserPhoto");
+		httpses.removeAttribute("currentUserRegDate");
 		
 		response.sendRedirect("login.jsp");
 		

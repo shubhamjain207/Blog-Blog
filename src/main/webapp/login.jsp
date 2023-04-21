@@ -20,12 +20,10 @@
 
 String email = "";
 email = (String) request.getAttribute("userEmail");
+boolean flag = true;
 
 
-	
-	
-	
-	
+if(email!=null){
 
 try {
 	
@@ -60,6 +58,11 @@ try {
 		
 			
 		}
+		else{
+			
+			flag = false;
+		}
+		
 		
 	}
 		
@@ -77,7 +80,15 @@ catch(Exception e) {
 	e.printStackTrace();
 }
 
+if(!flag){
+		%>
+		
+		<h1>User Not Found! Please Register.</h1>
+		
+		<%
+}
 
+}
 
 %>
 

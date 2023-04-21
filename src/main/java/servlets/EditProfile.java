@@ -51,11 +51,12 @@ public class EditProfile extends HttpServlet {
 		int userId = Integer.parseInt((String) httpsess.getAttribute("currentUserId"));
 		
 	
+		System.out.println(userName + " " + userEmail + " ");
 		
 		try {
 			if(userPhotoFile!=null) {
 				
-			String path = "C:/Users/hp/eclipse-workspace/TechBlog/src/main/webapp/pics/" + userPhotoFile.getSubmittedFileName();
+			String path = "C:/Users/hp/eclipse-workspace/Blog Blog/src/main/webapp/pics/" + userPhotoFile.getSubmittedFileName();
 			InputStream is = userPhotoFile.getInputStream();
 			byte b[] = new byte[is.available()];
 			is.read(b);
