@@ -44,6 +44,7 @@ public class Login extends HttpServlet {
 
 		RequestDispatcher rd;
 		request.setAttribute("userEmail", email);
+		request.setAttribute("userPassword", password);
 		rd = request.getRequestDispatcher("login.jsp");
 		rd.forward(request, response);
 		

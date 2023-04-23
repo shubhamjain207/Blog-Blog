@@ -18,9 +18,10 @@
 <%
 
 
-String email = "";
+String email = "",password="";
 email = (String) request.getAttribute("userEmail");
-boolean flag = true;
+password = (String) request.getAttribute("userPassword");
+int flag = 1;
 
 
 if(email!=null){
@@ -38,7 +39,7 @@ try {
 	
 	while(set.next()) {
 	
-		if(set.getString("userEmail").equals(email)){
+		if(set.getString("userEmail").equals(email) && set.getString("userPassword").equals(password)){
 		
 		
 			
@@ -58,9 +59,13 @@ try {
 		
 			
 		}
+		
+		else if(set.getString("userEmail").equals(email) && !set.getString("userPassword").equals(password)){
+			 flag = 2;
+		}
 		else{
 			
-			flag = false;
+			flag = 3;
 		}
 		
 		
@@ -80,12 +85,20 @@ catch(Exception e) {
 	e.printStackTrace();
 }
 
-if(!flag){
+if(flag == 3){
 		%>
 		
 		<h1>User Not Found! Please Register.</h1>
 		
 		<%
+}
+
+else if(flag == 2){
+	
+	%>
+	<h1>Incorrect Password.</h1>
+	<% 
+	
 }
 
 }
@@ -100,7 +113,7 @@ if(!flag){
 <form action="Login" class="loginForm" method="post">
 
 Email:<input type="email" class="formFlexItems" name="userEmail">
-Password:<input type="password" class="formFlexItems">
+Password:<input type="password" class="formFlexItems" name="userPassword">
 <input type="submit" class="formFlexItems" value="login">
 
 </form>

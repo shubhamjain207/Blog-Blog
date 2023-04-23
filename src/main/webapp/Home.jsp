@@ -52,7 +52,7 @@ try {
 	
 	
 	%>
-String userName	
+	
 	<div class="blogContainer">
 		<h1><%=list.get(i).getBlogContent()%></h3>
 	    <h3><%=list.get(i).getBlogUserEmail()%></h1>
@@ -69,22 +69,39 @@ String userName
 
 %>
 
+<button class="writeBlogButton">Write Blog</button>
+
+
 <div class="writeBlog">
 
+<div class="writeBlogChild">
 <form action="Home1" method="post" >
 
-Write blog : <input type="text" name="blogpost">
+Write blog : <input type="textarea" name="blogpost">
 
 <input type="submit" value="Post">
-</div>
+<button class="closeBtn">Close</button>
 
 </form>
+
+</div>
+
+</div>
+
+
+
 
 <div class="profilePageButton">
 	<form action="profile.jsp" method="post">
 	<input type="submit" value="My Profile">
+	
 	</form>
 </div>
 
+<script src="index1.js">
+
+
+
+</script>
 </body>
 </html>

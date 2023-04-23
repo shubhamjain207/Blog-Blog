@@ -7,17 +7,47 @@
 	
 }
 
+.writeBlogButton{
+	
+	position:fixed;
+	right:80px;
+	top:0;
+	
+	
+}
+
 .blogContainer{
 	border:1px solid black;
 	
 	height:100px;
-	width:200px;
+	width:auto;
 	padding:10px;
 	margin:10px;
 }
 
 .writeBlog{
-	position:fixed;
+	display:none;
+	position:absolute;
 	width:100%;
 	top:0;
+	height:100%;
+	align-items:center;
+	justify-content:center;
+	background:rgba(255,0,0,0.1);
+	
 }
+
+.writeBlogChild{
+	
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	height:30%;
+	width:60%;
+	border:3px solid black;
+	padding:30px;
+	background:rgba(255,0,0,0.5);
+	
+	
+}
+
