@@ -10,6 +10,8 @@
      <%@ include file="homeStyle.css"%>
 </style>
 
+
+
 </head>
 <body>
 
@@ -17,6 +19,20 @@
 <%@page import="java.util.*"%>
 <%@page import="servlets.BlogPost"%>
 
+<div class="navbar-home">
+
+
+<div class="profilePageButton">
+	<form action="profile.jsp" method="post">
+		<input type="submit" value="My Profile">
+	</form>
+</div>
+
+<div>
+<button class="writeBlogButton">Write Blog</button>
+</div>
+
+</div>
 
 <%
 
@@ -46,10 +62,13 @@ try {
 	}
 	
 	Collections.reverse(list);
+	%>
+	
+	<div class="blogContainerMain">
+	
+	
+	<%
 	for(int i = 0 ; i < list.size() ; i++){
-		
-	
-	
 	
 	%>
 	
@@ -59,9 +78,18 @@ try {
 	</div>
 	
 	
+	
 <% 	
 	
 }	
+	
+%>
+
+</div>
+
+<% 
+
+
 
 }catch(Exception e){
 		
@@ -69,7 +97,7 @@ try {
 
 %>
 
-<button class="writeBlogButton">Write Blog</button>
+
 
 
 <div class="writeBlog">
@@ -91,17 +119,11 @@ Write blog : <input type="textarea" name="blogpost">
 
 
 
-<div class="profilePageButton">
-	<form action="profile.jsp" method="post">
-	<input type="submit" value="My Profile">
-	
-	</form>
-</div>
-
-<script src="index1.js">
 
 
-
+<script>
+  <%@ include file="in2.js"%>
 </script>
+
 </body>
 </html>

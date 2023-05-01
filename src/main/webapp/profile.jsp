@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
@@ -27,9 +29,7 @@ String userPhoto =  (String)session.getAttribute("currentUserPhoto");
  if(userEmail == null){
 	 response.sendRedirect("login.jsp");
  }
- else{
-	 out.println("<h1>User Login</h1>");
- }
+ 
  
 
 
@@ -47,7 +47,7 @@ String userPhoto =  (String)session.getAttribute("currentUserPhoto");
 <h1>Date of joining: <%=userRegDate%></h1>
 
 
-<button id="editProfile">Edit</button>
+<button class="editProfile">Edit</button>
 
 <form action="Logout" method="post">
 
@@ -79,7 +79,9 @@ String userPhoto =  (String)session.getAttribute("currentUserPhoto");
 </div>
 
 
- <script src="style2.js"></script> 
+<script>
+     <%@ include file="in3.js"%>
+</script>
  
 </body>
 </html>
