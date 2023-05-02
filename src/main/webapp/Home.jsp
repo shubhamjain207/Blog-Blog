@@ -21,6 +21,9 @@
 
 <div class="navbar-home">
 
+<div class="webTitle">
+    Blog Blog
+</div>
 
 <div class="profilePageButton">
 	<form action="profile.jsp" method="post">
@@ -73,8 +76,8 @@ try {
 	%>
 	
 	<div class="blogContainer">
-		<h1><%=list.get(i).getBlogContent()%></h3>
-	    <h3><%=list.get(i).getBlogUserEmail()%></h1>
+		<div class="blogText"><%=list.get(i).getBlogContent()%></div>
+	    <h3 class="blogWriter"><%=list.get(i).getBlogUserEmail()%></h1>
 	</div>
 	
 	
@@ -105,7 +108,9 @@ try {
 <div class="writeBlogChild">
 <form action="Home1" method="post" >
 
-Write blog : <input type="textarea" name="blogpost">
+<textarea name="blogpost" rows=10 cols="80" maxlength="400">
+
+</textarea>
 
 <input type="submit" value="Post">
 <button class="closeBtn">Close</button>
