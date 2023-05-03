@@ -35,6 +35,8 @@
 <button class="writeBlogButton">Write Blog</button>
 </div>
 
+
+
 </div>
 
 <%
@@ -119,6 +121,9 @@ try {
 
 </div>
 
+
+
+    
 </div>
 
 

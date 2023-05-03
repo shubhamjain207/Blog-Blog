@@ -6,32 +6,23 @@ body{
 
 
 .profilePageButton{
-	
-	
-	margin-right:20px;
-	
+margin-right:20px;	
 }
 
 .writeBlogButton{
-
-	margin-right:10px;
-	
-	
+margin-right:10px;
 }
 
 .navbar-home{
-	position:fixed;
-	display:flex;
-	flex-direction:row-reverse;
-	height:20px;
-	border:1px solid black;
-	width:100%;
-	padding:10px 0px;
-	background-color:#ACDDDE;
-	
+position:fixed;
+display:flex;
+flex-direction:row-reverse;
+height:20px;
+border:1px solid black;
+width:100%;
+padding:10px 0px;
+background-color:#ACDDDE;
 }
-
-
 
 .blogContainer{
 	
@@ -59,12 +50,8 @@ body{
 .blogContainerMain{
 	
 	margin-top:30px;
-	
 	width:100%;
 	background:#FEF8DD;
-	
-	
-	
 	
 }
 
@@ -81,26 +68,21 @@ body{
 }
 
 .writeBlogChild{
-	background-color:#008040;
-	display:flex;
-	flex-direction: column;	
-	align-items:center;
-	justify-content:center;
-	height:30%;
-	width:60%;
-	border:3px solid black;
-	padding:30px;
-	
-	
+background-color:#ACDDDE;
+display:flex;
+flex-direction: column;	
+align-items:center;
+justify-content:center;
+height:auto;
+width:auto;
+border:3px solid black;
+padding:30px;
 }
 
 .webTitle{
-	
-	position:absolute;
-	left:20px;
-	font-size:20px;
-	font-weight:bold;
-	
-	
+position:absolute;
+left:20px;
+font-size:20px;
+font-weight:bold;
 }
 

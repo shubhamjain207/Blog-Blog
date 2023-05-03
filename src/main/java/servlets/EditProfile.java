@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -21,22 +22,17 @@ import javax.servlet.http.Part;
 @MultipartConfig
 @WebServlet("/EditProfile")
 public class EditProfile extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
        
-   
-    
-    public EditProfile() {
-        super();
-        
+	public EditProfile() {
+        super(); 
     }
 
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
@@ -50,7 +46,6 @@ public class EditProfile extends HttpServlet {
 		String userPhoto = (userPhotoFile!=null) ? userPhotoFile.getSubmittedFileName() : (String) httpsess.getAttribute("currentUserPhoto");
 		int userId = Integer.parseInt((String) httpsess.getAttribute("currentUserId"));
 		
-	
 		System.out.println(userName + " " + userEmail + " ");
 		
 		try {
@@ -90,7 +85,7 @@ public class EditProfile extends HttpServlet {
 			httpses.setAttribute("currentUserPassword", userPassword);
 			httpses.setAttribute("currentUserPhoto",userPhoto );
 			
-			
+			response.sendRedirect(request.getContextPath() + "/Home.jsp");
 			
 		}catch(Exception e) {
 			

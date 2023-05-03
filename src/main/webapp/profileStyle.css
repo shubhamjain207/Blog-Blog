@@ -1,11 +1,12 @@
 body{
-	background-color:yellow;
+	background-color:#FEF8DD;
 	display:flex;
 	justify-content:center;
 	align-items:center;
 }
 
 #profileView,#editProfileView{
+	background-color:#FFE7C7;
 	border:2px solid black;
 	padding:20px;
 	display:flex;

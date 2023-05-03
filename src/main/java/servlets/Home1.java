@@ -58,9 +58,7 @@ public class Home1 extends HttpServlet {
 			
 			pstm.executeUpdate();
 			
-			RequestDispatcher rd;
-			rd = request.getRequestDispatcher("Home.jsp");
-			rd.forward(request, response);
+			response.sendRedirect(request.getContextPath() + "/Home.jsp");
 		
 			
 			
