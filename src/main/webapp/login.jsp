@@ -52,9 +52,7 @@ try {
 			httpses.setAttribute("currentUserRegDate", set.getString("userRegDate"));
 			
 			
-			RequestDispatcher rd;
-			rd = request.getRequestDispatcher("Home.jsp");
-			rd.forward(request, response);
+			response.sendRedirect(request.getContextPath() + "/Home.jsp");
 			
 		
 			
