@@ -62,7 +62,7 @@ try {
 	while(set.next()){
 	
 		
-		BlogPost bp = new BlogPost(set.getString("blog_content"),set.getString("user_id_blog"));
+		BlogPost bp = new BlogPost(set.getString("blog_content"),set.getString("user_id_blog"), set.getString("blog_tag"));
 		list.add(bp);
 	}
 	
@@ -78,8 +78,9 @@ try {
 	%>
 	
 	<div class="blogContainer">
+		<div class="blogTag"><%=list.get(i).getBlogTag()%></div><br>
 		<div class="blogText"><%=list.get(i).getBlogContent()%></div>
-	    <h3 class="blogWriter"><%=list.get(i).getBlogUserEmail()%></h1>
+	    <h3 class="blogWriter"><%=list.get(i).getBlogUserEmail()%></h3>
 	</div>
 	
 	
@@ -117,7 +118,27 @@ try {
 <input type="submit" value="Post">
 <button class="closeBtn">Close</button>
 
+
+
+<br>
+<label for="tags">Select tag:</label>
+
+
+<select name="tags" id="tags">
+  <option value="Science and Technology">Science and Technology</option>
+  <option value="Personal Blog">Personal Blog</option>
+  <option value="Education">Education</option>
+  
+</select>
+	
+
+
+
+
 </form>
+
+
+
 
 </div>
 

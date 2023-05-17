@@ -3,12 +3,21 @@ package servlets;
 public class BlogPost {
 	public String blogContent;
 	public String blogUserEmail;
+	public String blogTag;
 	
-	public BlogPost(String content, String email){
+	public BlogPost(String content, String email, String tag){
 		
 		this.blogContent = content;
 		this.blogUserEmail = email;
-		
+		this.blogTag = tag;
+	}
+
+	public String getBlogTag() {
+		return blogTag;
+	}
+
+	public void setBlogTag(String blogTag) {
+		this.blogTag = blogTag;
 	}
 
 	public String getBlogContent() {

@@ -37,6 +37,7 @@ public class Home1 extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		String blogpostcontent = request.getParameter("blogpost");
+		String blogTag = request.getParameter("tags");
 		
 		
 		
@@ -44,7 +45,7 @@ public class Home1 extends HttpServlet {
 		try { 
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:8809/techblog","root","1234");
-			String q = "insert into blogposts(user_id_blog,blog_content) values(?,?)";
+			String q = "insert into blogposts(user_id_blog,blog_content,blog_tag) values(?,?,?)";
 			
 
 			HttpSession httpsess = request.getSession();
@@ -54,6 +55,7 @@ public class Home1 extends HttpServlet {
 			PreparedStatement pstm = cn.prepareStatement(q);
 			pstm.setString(1, currentUser);
 			pstm.setString(2,blogpostcontent);
+			pstm.setString(3,blogTag);
 			
 			
 			pstm.executeUpdate();
