@@ -35,6 +35,11 @@ background-color:#ACDDDE;
 	background-color:#FFE7C7;
 }
 
+.blogContainer .blogDate{
+	
+	float:right;
+	
+}
 
 .blogContainer .blogText{
 	 word-wrap: break-word;

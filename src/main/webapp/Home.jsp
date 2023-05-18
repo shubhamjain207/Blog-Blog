@@ -62,7 +62,7 @@ try {
 	while(set.next()){
 	
 		
-		BlogPost bp = new BlogPost(set.getString("blog_content"),set.getString("user_id_blog"), set.getString("blog_tag"));
+		BlogPost bp = new BlogPost(set.getString("blog_content"),set.getString("user_id_blog"), set.getString("blog_tag"), set.getString("blog_date_time"));
 		list.add(bp);
 	}
 	
@@ -78,6 +78,7 @@ try {
 	%>
 	
 	<div class="blogContainer">
+	   <div class="blogDate"><%=list.get(i).getBlogDate()%></div><br>
 		<div class="blogTag"><%=list.get(i).getBlogTag()%></div><br>
 		<div class="blogText"><%=list.get(i).getBlogContent()%></div>
 	    <h3 class="blogWriter"><%=list.get(i).getBlogUserEmail()%></h3>
@@ -100,7 +101,7 @@ try {
 }catch(Exception e){
 		
 }
-
+		
 %>
 
 
@@ -111,11 +112,11 @@ try {
 <div class="writeBlogChild">
 <form action="Home1" method="post" >
 
-<textarea name="blogpost" rows=10 cols="80" maxlength="400">
+<textarea class ="blogWriteArea" name="blogpost" rows=10 cols="80" maxlength="400">
 
 </textarea>
 
-<input type="submit" value="Post">
+<input class="postBtn" type="submit" value="Post">
 <button class="closeBtn">Close</button>
 
 

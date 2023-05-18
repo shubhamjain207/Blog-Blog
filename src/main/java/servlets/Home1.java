@@ -7,6 +7,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -39,13 +41,18 @@ public class Home1 extends HttpServlet {
 		String blogpostcontent = request.getParameter("blogpost");
 		String blogTag = request.getParameter("tags");
 		
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");  
+		LocalDateTime now = LocalDateTime.now();  
+		String date = dtf.format(now);
+		
+		   
 		
 		
 		
 		try { 
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:8809/techblog","root","1234");
-			String q = "insert into blogposts(user_id_blog,blog_content,blog_tag) values(?,?,?)";
+			String q = "insert into blogposts(user_id_blog,blog_content,blog_tag,blog_date_time) values(?,?,?,?)";
 			
 
 			HttpSession httpsess = request.getSession();
@@ -56,6 +63,7 @@ public class Home1 extends HttpServlet {
 			pstm.setString(1, currentUser);
 			pstm.setString(2,blogpostcontent);
 			pstm.setString(3,blogTag);
+			pstm.setString(4,date);
 			
 			
 			pstm.executeUpdate();
