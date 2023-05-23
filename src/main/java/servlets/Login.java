@@ -36,6 +36,10 @@ public class Login extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		
+		
+		String path1 = System. getProperty("user. dir");
+		System.out.println("PATH==========>" + path1);
+		
 		String email = request.getParameter("userEmail");
 		String password = request.getParameter("userPassword");
 		

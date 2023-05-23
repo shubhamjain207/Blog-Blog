@@ -36,7 +36,7 @@ String userPhoto =  (String)session.getAttribute("currentUserPhoto");
 
 <div id="profileView" style="display:visible">  
 
-<img src="pics/<%=userPhoto%>" style="height:100px;width:100px" >
+<img src="<%=userPhoto %>" style="height:100px;width:100px" >
 <div class="heading">User Name</div>
 <div><%=userName %></div>
 <div class="heading">User Email</div>

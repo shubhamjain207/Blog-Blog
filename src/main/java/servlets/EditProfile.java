@@ -49,9 +49,9 @@ public class EditProfile extends HttpServlet {
 		System.out.println(userName + " " + userEmail + " ");
 		
 		try {
-			if(userPhotoFile!=null) {
-				
-			String path = "C:/Users/hp/eclipse-workspace/Blog Blog/src/main/webapp/pics/" + userPhotoFile.getSubmittedFileName();
+			if(userPhotoFile!=null) { 	
+					
+			String path = "E:/New folder (7)/tomcat/webapps/Blog Blog/" + userPhotoFile.getSubmittedFileName();
 			InputStream is = userPhotoFile.getInputStream();
 			byte b[] = new byte[is.available()];
 			is.read(b);

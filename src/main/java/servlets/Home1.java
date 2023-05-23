@@ -70,6 +70,9 @@ public class Home1 extends HttpServlet {
 			
 			response.sendRedirect(request.getContextPath() + "/Home.jsp");
 		
+//			String path1 = System. getProperty("user. dir");
+//			System.out.println("PATH==========>" + path1);
+//			
 			
 			
 		} catch (Exception e) {
