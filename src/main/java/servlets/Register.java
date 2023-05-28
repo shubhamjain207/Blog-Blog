@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.Date;
 
 import javax.servlet.ServletException;
@@ -16,7 +17,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
+
+import com.mysql.cj.xdevapi.Statement;
 
 
 @MultipartConfig
@@ -91,8 +95,32 @@ public class Register extends HttpServlet {
 			
 			pstm.executeUpdate();
 			
+			HttpSession httpses = request.getSession();
+			
+			httpses.setAttribute("currentUserEmail", userEmail);
+			httpses.setAttribute("currentUserName", userName);
+			httpses.setAttribute("currentUserGender", gender);
+			httpses.setAttribute("currentUserPhoto", userPhoto.getSubmittedFileName());
+			httpses.setAttribute("currentUserRegDate", date.toString());
 			
 		
+			String q1 = "select * from new_table";
+			Statement pstm1 =  (Statement) cn.createStatement();
+			ResultSet set =  pstm.executeQuery(q1);
+
+				
+				while(set.next()) {
+				
+					if(set.getString("userEmail").equals(userEmail) && set.getString("userPassword").equals(userPassword)){
+					
+							httpses.setAttribute("currentUserId", set.getString("userId"));
+						
+					}
+					
+				}
+			
+				response.sendRedirect(request.getContextPath() + "/Home.jsp");
+			
 			
 			
 		} catch (Exception e) {
